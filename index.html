@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بوابة لوجستي - التحقق من بطاقة السائق</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&family=Cairo:wght@800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --tga-blue: #005682;
+            --tga-light-blue: #007bff;
+            --bg-gray: #f8f9fa;
+            --border-color: #e0e0e0;
+            --text-muted: #6c757d;
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: var(--bg-gray);
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .font-alhurra {
+            font-family: 'Cairo', sans-serif;
+            font-size: 20px !important;
+            font-weight: 800;
+            color: #1a1a1a;
+            letter-spacing: 0.5px;
+        }
+
+        .main-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+        }
+
+        .page-header-title {
+            width: 100%;
+            max-width: 900px;
+            color: var(--tga-blue);
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 25px;
+            text-align: right;
+        }
+
+        .validation-card {
+            background: white;
+            width: 100%;
+            max-width: 900px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            padding: 40px;
+        }
+
+        .card-inner-title {
+            color: var(--tga-blue);
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 35px;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 15px;
+        }
+
+        .grid-layout {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px 20px;
+        }
+
+        .data-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .label {
+            color: var(--text-muted);
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .value {
+            color: #2d2d2d;
+            font-size: 17px;
+            font-weight: 700;
+        }
+
+        .full-row {
+            grid-column: span 3;
+            background: #f1f7fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 10px;
+            border-right: 4px solid var(--tga-blue);
+        }
+
+        .footer-actions {
+            width: 100%;
+            max-width: 900px;
+            margin-top: 25px;
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        .btn-back {
+            background: white;
+            border: 2px solid var(--tga-light-blue);
+            color: var(--tga-light-blue);
+            padding: 10px 45px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-family: 'Tajawal', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        @media (max-width: 768px) {
+            .grid-layout { grid-template-columns: 1fr; }
+            .full-row { grid-column: span 1; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-container">
+        <div class="page-header-title">تفاصيل بطاقة السائق</div>
+
+        <div class="validation-card">
+            <div class="card-inner-title">بطاقة السائق</div>
+
+            <div class="grid-layout">
+                <div class="data-item">
+                    <span class="label">رقم البطاقة</span>
+                    <span class="value">59.00035859</span>
+                </div>
+                <div class="data-item">
+                    <span class="label">هوية السائق</span>
+                    <span class="value">2613862164</span>
+                </div>
+                <div class="data-item">
+                    <span class="label">الاسم الأول</span>
+                    <span class="value font-alhurra">بابر</span>
+                </div>
+
+                <div class="data-item">
+                    <span class="label">اسم العائلة</span>
+                    <span class="value font-alhurra">خان</span>
+                </div>
+                <div class="data-item">
+                    <span class="label">تاريخ إصدار البطاقة</span>
+                    <span class="value">2025-10-13</span>
+                </div>
+                <div class="data-item">
+                    <span class="label">تاريخ إنتهاء البطاقة</span>
+                    <span class="value">2026-10-15</span>
+                </div>
+
+                <div class="data-item full-row">
+                    <span class="label">نوع البطاقة</span>
+                    <span class="value">النقل المتخصص</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-actions">
+            <button class="btn-back" onclick="window.history.back()">رجوع</button>
+        </div>
+    </div>
+
+</body>
+</html>
